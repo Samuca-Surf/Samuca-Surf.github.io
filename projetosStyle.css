@@ -1,0 +1,48 @@
+/* Reset básico já está no style.css, aqui só estilos específicos */
+
+/* Lista de projetos */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* espaço entre os cards */
+    margin-top: 20px;
+}
+
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.05); 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito hover nos cards */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Título do projeto */
+.project-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+/* Descrição do projeto */
+.project-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.project-card .btn {
+    margin-top: 15px; 
+    display: inline-block;
+}
+
+/* Botões já centralizados pelo style.css, mas pode aumentar o espaçamento */
+.buttons {
+    margin-top: 30px;
+}
