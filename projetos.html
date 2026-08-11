@@ -5,269 +5,485 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projetos</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  
 </head>
 
 <body class="bg-gray-900 text-gray-100">
 
-<button class="p-2 m-2 bg-gray-800 text-white rounded md:hidden">
-  ☰
-</button>
+  <!-- Botão do menu mobile -->
+  <button
+    id="sidebarButton"
+    class="fixed top-3 left-3 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition md:hidden"
+    aria-label="Abrir menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
 
-<div class="flex">
+  <!-- Overlay mobile -->
+  <div
+    id="sidebarOverlay"
+    class="fixed inset-0 bg-black/60 z-40 hidden md:hidden"
+  ></div>
 
-  <!-- Sidebar -->
-  <aside class="w-64 bg-gray-900 text-gray-100 h-screen hidden md:flex flex-col border-r border-gray-800">
-    <div class="p-4 text-xl font-bold border-b border-gray-800">
-      Projetos
-    </div>
-  
-    <nav class="flex-1 p-4 space-y-2">
-      <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-800 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-        </svg>
-      </a>
-  
-  ```
-  <a href="sobre.html" class="block px-4 py-2 rounded hover:bg-gray-800 transition">
-    ℹ️ Sobre
-  </a>
-  
-  <a href="https://samuca-surf.github.io/GamesRepo/" class="block px-4 py-2 rounded hover:bg-gray-800 transition">
-    🎮 Games
-  </a>
-  
-  <a href="https://samuca-surf.github.io/pixelArtL/" class="block px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 transition">
-    🛒 Comprar Pixel Art
-  </a>
-  ```
-  
-    </nav>
-  
-    <div class="p-4 border-t border-gray-800 text-sm text-gray-500">
-      © 2026 Desenvolvido por Samuel Mesquita.
-    </div>
-  </aside>
+  <div class="flex">
+
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 left-0 z-50 w-64 bg-gray-900 text-gray-100 h-screen
+             flex flex-col border-r border-gray-800
+             -translate-x-full transition-transform duration-300 ease-in-out
+             md:translate-x-0 md:static md:flex"
+    >
+
+      <!-- Cabeçalho do Sidebar -->
+      <div class="p-4 text-xl font-bold border-b border-gray-800 flex items-center justify-between">
+        <span>Projetos</span>
+
+        <!-- Botão fechar mobile -->
+        <button
+          id="sidebarClose"
+          class="p-1 text-gray-400 hover:text-white md:hidden"
+          aria-label="Fechar menu"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Navegação -->
+      <nav class="flex-1 p-4 space-y-2">
+
+        <a
+          href="index.html"
+          class="flex items-center gap-3 px-4 py-2 rounded hover:bg-gray-800 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+
+          <span>Início</span>
+        </a>
+
+        <a
+          href="sobre.html"
+          class="block px-4 py-2 rounded hover:bg-gray-800 transition"
+        >
+          ℹ️ Sobre
+        </a>
+
+        <a
+          href="https://samuca-surf.github.io/GamesRepo/"
+          class="block px-4 py-2 rounded hover:bg-gray-800 transition"
+        >
+          🎮 Games
+        </a>
+
+        <a
+          href="https://samuca-surf.github.io/pixelArtL/"
+          class="block px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 transition"
+        >
+          🛒 Comprar Pixel Art
+        </a>
+
+      </nav>
+
+      <!-- Rodapé -->
+      <div class="p-4 border-t border-gray-800 text-sm text-gray-500">
+        © 2026 Desenvolvido por Samuel Mesquita.
+      </div>
+
+    </aside>
 
 
-    
+    <!-- Conteúdo -->
+    <main class="flex-1 p-6">
 
-
-  <!-- Conteúdo -->
-  <main class="flex-1 p-6">
-
-    <!-- Top bar do conteúdo -->
-    <div class="relative w-max ml-auto mb-4">
+      <!-- Top bar do conteúdo -->
+      <div class="relative w-max ml-auto mb-4">
 
         <!-- Botão principal -->
-        <button id="themeButton"
-            class="w-full h-10 flex items-center justify-between bg-gray-800 text-white rounded-lg px-3 shadow-md hover:bg-gray-700 transition">
+        <button
+          id="themeButton"
+          class="w-full h-10 flex items-center justify-between bg-gray-800 text-white rounded-lg px-3 shadow-md hover:bg-gray-700 transition"
+        >
 
-            <span class="flex items-center gap-2">
-                <!-- Ícone atual (lua padrão) -->
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5 text-white">
+          <span class="flex items-center gap-2">
 
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75
-                            0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635
-                            7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
-                </svg>
+            <!-- Ícone atual -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75
+                0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635
+                7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
+            </svg>
 
-                
-            </span>
+          </span>
 
-            <span>▼</span>
+          <span>▼</span>
+
         </button>
 
         <!-- Menu -->
-        <div id="themeMenu"
-            class="hidden absolute mt-2 w-full bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-            <!-- Dark -->
-            <button class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-700 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5 text-white">
+        <div
+          id="themeMenu"
+          class="hidden absolute mt-2 w-full bg-gray-800 rounded-lg shadow-lg overflow-hidden z-30"
+        >
 
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75
-                            0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635
-                            7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
-                </svg>
-                <!-- Escuro -->
-            </button>
+          <!-- Dark -->
+          <button
+            class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-700 text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75
+                0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635
+                7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
+            </svg>
+          </button>
 
-            <!-- Light -->
-            <button class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-700 text-yellow-400">
+          <!-- Light -->
+          <button
+            class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-700 text-yellow-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.636-1.591 1.591M21 12h-2.25m-.636
+                6.364-1.591-1.591M12 18.75V21m-6.364-.636 1.591-1.591M3
+                12h2.25m.636-6.364 1.591 1.591M12 8.25a3.75 3.75 0 1
+                0 0 7.5 3.75 3.75 0 0 0 0-7.5Z"
+              />
+            </svg>
+          </button>
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5">
-
-                    <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 3v2.25m6.364.636-1.591 1.591M21 12h-2.25m-.636
-                            6.364-1.591-1.591M12 18.75V21m-6.364-.636 1.591-1.591M3
-                            12h2.25m.636-6.364 1.591 1.591M12 8.25a3.75 3.75 0 1
-                            0 0 7.5 3.75 3.75 0 0 0 0-7.5Z"/>
-                </svg>
-
-                <!-- Claro -->
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <h1 class="text-3xl font-bold mb-2">Meus Projetos</h1>
-    <p class="text-gray-400 mb-6">Aqui estão alguns dos projetos que desenvolvi:</p>
-
-    <!-- GRID -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
-
-        <h2 class="text-xl font-semibold mb-2">🎮 Sistema de Loja de Jogos</h2>
-        <p class="text-gray-400 mb-4">
-          Projeto em Java (Spring Boot, Maven) com API REST e front-end.
-        </p>
-        <a href="https://github.com/Samuca-Surf/Loja-jogos"
-           class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-          Ver projeto
-        </a>
-      </div>
-
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
-
-        <h2 class="text-xl font-semibold mb-2">🏨 Sistema de Acomodação</h2>
-        <p class="text-gray-400 mb-4">
-          Sistema de acomodação de hotéis.
-        </p>
-        <div class="flex gap-3">
-          <a href="https://github.com/Samuca-Surf/acomodacao-front"
-            class="flex-1 text-center bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-            Front-end
-          </a>
-
-          <a href="https://github.com/Samuca-Surf/acomodacao-beckend"
-            class="flex-1 text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition">
-            Back-end
-          </a>
         </div>
       </div>
 
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
 
-        <h2 class="text-xl font-semibold mb-2">🔐 Ferramentas de Fuzzing</h2>
-        <p class="text-gray-400 mb-4">
-          Scripts em Python para análise de vulnerabilidades.
-        </p>
-        <a href="https://github.com/Samuca-Surf/HackingTools"
-           class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-          Ver projeto
-        </a>
-      </div>
+      <h1 class="text-3xl font-bold mb-2">Meus Projetos</h1>
 
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
+      <p class="text-gray-400 mb-6">
+        Aqui estão alguns dos projetos que desenvolvi:
+      </p>
 
-        <h2 class="text-xl font-semibold mb-2">🕹️ Jogo Unity</h2>
-        <p class="text-gray-400 mb-4">
-          Jogo em desenvolvimento com Unity e C#.
-        </p>
-        <a href="https://samuca-surf.itch.io/betinha-survivor"
-           class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-          Ver projeto
-        </a>
-      </div>
 
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
+      <!-- GRID -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-        <h2 class="text-xl font-semibold mb-2">💬 Fórum Básico</h2>
-        <p class="text-gray-400 mb-4">
-          Projeto em desenvolvimento com Spring Boot.
-        </p>
-        <a href="https://github.com/Samuca-Surf/forum"
-           class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-          Ver projeto
-        </a>
-      </div>
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
 
-      <!-- CARD -->
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md
-                  transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300">
+          <h2 class="text-xl font-semibold mb-2">
+            🎮 Sistema de Loja de Jogos
+          </h2>
 
-        <h2 class="text-xl font-semibold mb-2"> Sistema de Lista de Tarefas</h2>
-        <p class="text-gray-400 mb-4">
-          Sistema de lista de tarefas simples, apenas front-end utilizando o framework Vue e Bootstrap.
-        </p>
-        <div class="flex gap-3">
-          <a href="https://lista-tarefas-front.netlify.app/"
-            class="flex-1 text-center bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-            Front-end
+          <p class="text-gray-400 mb-4">
+            Projeto em Java (Spring Boot, Maven) com API REST e front-end.
+          </p>
+
+          <a
+            href="https://github.com/Samuca-Surf/Loja-jogos"
+            class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+          >
+            Ver projeto
           </a>
 
-          <a href="https://github.com/Samuca-Surf/lista-de-tarefas"
-            class="flex-1 text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition">
-            Código-fonte
-          </a>
         </div>
+
+
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
+
+          <h2 class="text-xl font-semibold mb-2">
+            🏨 Sistema de Acomodação
+          </h2>
+
+          <p class="text-gray-400 mb-4">
+            Sistema de acomodação de hotéis.
+          </p>
+
+          <div class="flex gap-3">
+
+            <a
+              href="https://github.com/Samuca-Surf/acomodacao-front"
+              class="flex-1 text-center bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+            >
+              Front-end
+            </a>
+
+            <a
+              href="https://github.com/Samuca-Surf/acomodacao-beckend"
+              class="flex-1 text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition"
+            >
+              Back-end
+            </a>
+
+          </div>
+        </div>
+
+
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
+
+          <h2 class="text-xl font-semibold mb-2">
+            🔐 Ferramentas de Fuzzing
+          </h2>
+
+          <p class="text-gray-400 mb-4">
+            Scripts em Python para análise de vulnerabilidades.
+          </p>
+
+          <a
+            href="https://github.com/Samuca-Surf/HackingTools"
+            class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+          >
+            Ver projeto
+          </a>
+
+        </div>
+
+
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
+
+          <h2 class="text-xl font-semibold mb-2">
+            🕹️ Jogo Unity
+          </h2>
+
+          <p class="text-gray-400 mb-4">
+            Jogo em desenvolvimento com Unity e C#.
+          </p>
+
+          <a
+            href="https://samuca-surf.itch.io/betinha-survivor"
+            class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+          >
+            Ver projeto
+          </a>
+
+        </div>
+
+
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
+
+          <h2 class="text-xl font-semibold mb-2">
+            💬 Fórum Básico
+          </h2>
+
+          <p class="text-gray-400 mb-4">
+            Projeto em desenvolvimento com Spring Boot.
+          </p>
+
+          <a
+            href="https://github.com/Samuca-Surf/forum"
+            class="inline-block bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+          >
+            Ver projeto
+          </a>
+
+        </div>
+
+
+        <!-- CARD -->
+        <div
+          class="bg-gray-800 rounded-xl p-5 shadow-md
+                 transition transform hover:scale-105 hover:shadow-indigo-500/20 duration-300"
+        >
+
+          <h2 class="text-xl font-semibold mb-2">
+            Sistema de Lista de Tarefas
+          </h2>
+
+          <p class="text-gray-400 mb-4">
+            Sistema de lista de tarefas simples, apenas front-end utilizando
+            o framework Vue e Bootstrap.
+          </p>
+
+          <div class="flex gap-3">
+
+            <a
+              href="https://lista-tarefas-front.netlify.app/"
+              class="flex-1 text-center bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+            >
+              Front-end
+            </a>
+
+            <a
+              href="https://github.com/Samuca-Surf/lista-de-tarefas"
+              class="flex-1 text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition"
+            >
+              Código-fonte
+            </a>
+
+          </div>
+        </div>
+
       </div>
 
-    </div>
 
-    <!-- BOTÕES -->
-    <div class="mt-8 flex gap-4">
-      <a href="index.html" class="bg-gray-800 px-4 py-2 rounded hover:bg-gray-700 transition">
-        Voltar
-      </a>
-      <a href="sobre.html" class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition">
-        Sobre Mim
-      </a>
-    </div>
+      <!-- BOTÕES -->
+      <div class="mt-8 flex gap-4">
 
-  </main>
-</div>
+        <a
+          href="index.html"
+          class="bg-gray-800 px-4 py-2 rounded hover:bg-gray-700 transition"
+        >
+          Voltar
+        </a>
 
-</body>
+        <a
+          href="sobre.html"
+          class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-500 transition"
+        >
+          Sobre Mim
+        </a>
 
-<script>
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- JavaScript -->
+  <script>
+
+    // =========================
+    // SIDEBAR
+    // =========================
+
+    const sidebar = document.getElementById("sidebar");
+    const sidebarButton = document.getElementById("sidebarButton");
+    const sidebarClose = document.getElementById("sidebarClose");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    function openSidebar() {
+      sidebar.classList.remove("-translate-x-full");
+      sidebarOverlay.classList.remove("hidden");
+      sidebarButton.setAttribute("aria-expanded", "true");
+
+      // Impede o scroll do conteúdo quando o menu estiver aberto
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeSidebar() {
+      sidebar.classList.add("-translate-x-full");
+      sidebarOverlay.classList.add("hidden");
+      sidebarButton.setAttribute("aria-expanded", "false");
+
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    sidebarButton.addEventListener("click", () => {
+      const isOpen = !sidebar.classList.contains("-translate-x-full");
+
+      if (isOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    sidebarClose.addEventListener("click", closeSidebar);
+
+    // Fecha ao clicar no fundo escuro
+    sidebarOverlay.addEventListener("click", closeSidebar);
+
+    // Fecha ao clicar em algum link do menu no celular
+    sidebar.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          closeSidebar();
+        }
+      });
+    });
+
+    // Se mudar de celular para desktop, limpa o estado do menu
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        sidebarOverlay.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+        sidebar.classList.remove("-translate-x-full");
+      } else if (!sidebar.classList.contains("-translate-x-full")) {
+        // Mantém o estado atual no mobile
+      }
+    });
+
+
+    // =========================
+    // MENU DE TEMA
+    // =========================
+
     const btn = document.getElementById("themeButton");
     const menu = document.getElementById("themeMenu");
 
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("hidden");
     });
 
     document.addEventListener("click", (e) => {
-        if (!btn.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.add("hidden");
-        }
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add("hidden");
+      }
     });
+
   </script>
 
-
+</body>
 </html>
