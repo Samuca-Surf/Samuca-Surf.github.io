@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samuca-surf.github.io/sitemap.xml
